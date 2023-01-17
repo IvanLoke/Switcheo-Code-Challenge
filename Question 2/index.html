@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fancy Form</title>
+
+  <!-- You may add more stuff here -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+  <form class ="mainform" id="exchangeform" onsubmit="return !1">
+    <div class = "headernav">
+        <p class="header-text">Transaction Form</p>
+    </div>
+    <div class="information-bars">
+        <div class="address-bar">
+            <label for="input-address" class="labels"> Recipient ETH Address:</label>
+            <input id="input-address" class="inputs"placeholder="eg.0xb5d4f343412dc8efb6ff599d790074d0f1e8d430"/>
+        </div>
+        <div>
+            <p class="error-message" id="invalid-address">Invalid address</p>
+        </div>  
+        <div class="amount-bar">
+            <label for="input-amount" class="labels">Amount to send:</label>
+            <div class="ether-label">  
+                <input id="input-amount" class="inputs-special"/>
+                <span class="amount-label">ether</span>
+            </div>
+        </div>
+        <div>
+            <p class="error-message" id="invalid-amount">Invalid amount</p>
+        </div>
+        <div class="opt-bar">
+            <label for="input-otp" class="labels">OTP Authentication:</label>
+            <input id="input-otp" class="inputs"placeholder="Enter 6 digit authentication code"/>
+        </div>
+        <div>
+            <p class="error-message" id="invalid-otp">Invalid OTP</p>
+        </div>  
+    </div>
+        <div class="buttondiv">
+            <button type="button" class="sendbutton button--loading" id="sendbutton" onclick="sendMouseClick()">
+                <span class="button--text">SEND TOKENS</span>
+            </button>
+        </div>
+  </form>
+  <div class="overlay-form" id="overlayForm">
+    <div class="information-text">
+        <p class="transaction-information">Transaction Information</p>
+        <p class="detail-check">Please check your details before confirming</p>
+    </div>
+    <div class="box">
+        <div class="information-user-input">
+            <div class="line">
+                <p class="details">FROM:</p>
+                <p class="details2" id="from-who"></p> 
+            </div>
+            <div class="line">
+                <p class="details">TO:</p>
+                <p class="details2" id="to-who"></p>
+            </div>
+            <div class="line">
+                <p class="details">AMOUNT: </p>
+                <p class="details2" id="how-much"></p>
+            </div>
+        </div>
+    </div>
+    <div class="buttondiv-confirmation-form">
+        <button type="button" class="cancel-button" onclick=closeOverlay()>
+            <span class="cancel-button-text">Cancel</span>
+        </button>
+        <button type="button" class="confirmbutton confirm--button--loading blue-button" id="confirm-button" onclick="confirmMouseClick()">
+            <span class="confirm--button--text">CONFIRM →</span>
+        </button>
+    </div>
+  </div>
+  <div class="confirmation-page" id="confirmation-page">
+      <img class="tick-icon"src="tick.png"/>
+      <p class="transaction-confirmed">Transaction was confirmed by the network! Click CLOSE to go back </p>
+      <button class="close-button blue-button" onclick="closeMouseClick()">
+        <span>Close</span>  
+      </button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

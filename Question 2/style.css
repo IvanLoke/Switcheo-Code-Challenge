@@ -30,10 +30,11 @@ input,label{
     justify-content: space-evenly;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, .4);
-    background-color: #DBD8D3;
+        background-color: #DBD8D3;
 }
+
 .information-bars{
-    background-color: #DBD8D3;
+    /* background-color: #DBD8D3; */
     height:100%;
     display:flex;
     flex-direction: column;
@@ -90,14 +91,13 @@ input,label{
 .ether-label{
     position:relative;
     background-color: white;
-    width:75%;
+    width: 74.5%;
     height:75%;
     display:flex;
     border: 2px solid black;
     border-radius:4px;
 }
 .inputs-special{
-    /* width:75%; */
     flex:1 1 0;
     height:100%;
     background-color: transparent;
@@ -146,6 +146,8 @@ input,label{
     animation: button-loading-spinner 1s ease 3;
     cursor:wait;
 }
+
+/* keyframes for animations for the loading animation */
 
 @keyframes button-loading-spinner{
     from{
@@ -198,6 +200,7 @@ input,label{
     font-family:"Roboto";
     font-weight:400;
     margin-top:-5px;
+    text-align: center;
 }
 .information-user-input{
     margin-left:5%;
@@ -285,6 +288,9 @@ input,label{
     animation: button-loading-spinner2 1s ease 2;
     cursor:wait;
 }
+
+/* keyframes for animations for the loading animation */
+
 @keyframes button-loading-spinner2{
     from{
         transform: rotate(0turn);
@@ -331,3 +337,45 @@ input,label{
     margin-bottom:2%;
 }
 
+/* for mobile responsiveness, styles applied when width goes below max-width stated*/
+
+@media (max-width: 425px) {  
+    .inputs{
+        width:90%;
+    }
+    .mainform{
+        height:100%;
+    }
+  
+    .ether-label{
+        width:90%;
+    }
+    .sendbutton{
+        margin-top:-20px;
+    }
+    .transaction-information{
+        font-size: 16px;
+        font-weight:700;
+    }
+}
+
+@media (max-width: 453px){
+    .header-text{
+        font-size:x-large;
+    }
+    .overlay-form{
+        min-height: 350px;
+    }
+}
+
+@media(max-width:345px){
+    .header-text{
+        font-size:large;
+    }
+}
+
+@media(max-width: 764px){
+    .buttondiv-confirmation-form{
+        margin-top: 30px;
+    }
+}
